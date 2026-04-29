@@ -20,14 +20,14 @@ window.addEventListener('scroll', () => {
 });
 
 /* ── Chapter nav active tracking ── */
-const navDots = document.querySelectorAll('.nav-dot');
+const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('#hero, #ch1, #ch2, #ch3, #ch4, #ch5, #ch6, #ch7');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      navDots.forEach(dot => dot.classList.remove('active'));
-      const activeLink = document.querySelector(`.nav-dot[href="#${entry.target.id}"]`);
+      navLinks.forEach(link => link.classList.remove('active'));
+      const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
       if (activeLink) activeLink.classList.add('active');
     }
   });
