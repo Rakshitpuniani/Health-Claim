@@ -60,7 +60,7 @@ function render() {
 function renderKPIs() {
   const k = DATA.kpis;
   const cards = [
-    { l: 'Total Claims', v: fmt(k.totalClaims), s: 'Jan – Nov 2021', c: 'kpi-navy' },
+    { l: 'Total Claims', v: fmt(k.totalClaims), s: 'Jan - Nov 2021', c: 'kpi-navy' },
     { l: 'Resolution Rate', v: k.resolvedPct + '%', s: `${fmt(k.paidCount)} Paid · ${fmt(k.rejectedCount)} Rejected`, c: 'kpi-teal' },
     { l: 'Mean TAT', v: k.meanTAT + 'd', s: `Median ${k.medianTAT}d · P95 ${k.p95TAT}d`, c: 'kpi-amber' },
     { l: 'Same-Day', v: k.sameDayPct + '%', s: `${fmt(k.sameDayCount)} claims in 0 days`, c: 'kpi-bright' },
@@ -241,7 +241,7 @@ function renderHeatmap() {
       if (cell && cell.volume > 0) {
         html += `<td style="${getStyle(cell.pctTotalTime)}">${cell.pctTotalTime}%<span class="heatmap-cell-sub">${cell.volume.toLocaleString()} claims · ${cell.meanTAT}d avg</span></td>`;
       } else {
-        html += `<td style="background:#f3f4f8; color:#c5cad4">—</td>`;
+        html += `<td style="background:#f3f4f8; color:#c5cad4">-</td>`;
       }
     });
     html += '</tr>';
@@ -384,7 +384,7 @@ function renderSlowAgents() {
   });
 }
 
-/* ═══ Agent Table — sorted by TAT desc, expandable ═══ */
+/* ═══ Agent Table - sorted by TAT desc, expandable ═══ */
 function renderAgentTable() {
   // Sort by meanTAT descending (most problematic first)
   const sorted = [...DATA.agents].sort((a, b) => b.meanTAT - a.meanTAT);
@@ -427,26 +427,26 @@ function renderAgentTable() {
 function renderCommentary() {
   document.getElementById('commentary').innerHTML = `
     <h3>Key Finding</h3>
-    <p>The claims operation achieves a <strong>99.96% resolution rate</strong>, but the <strong>mean turnaround time of 5.95 days masks extreme variance</strong>: while the median is just 3 days, the 95th percentile is 26 days and some claims take over 250 days. This right-skewed distribution is driven almost entirely by <strong>two bottleneck combinations — Medical claims via Scanning (21.5-day average TAT, 30.3% of all processing time) and Hospital claims via ECLIPSE (8.1-day TAT, 24.8% of total time)</strong>.</p>
+    <p>The claims operation achieves a <strong>99.96% resolution rate</strong>, but the <strong>mean turnaround time of 5.95 days masks extreme variance</strong>: while the median is just 3 days, the 95th percentile is 26 days and some claims take over 250 days. This right-skewed distribution is driven almost entirely by <strong>two bottleneck combinations - Medical claims via Scanning (21.5-day average TAT, 30.3% of all processing time) and Hospital claims via ECLIPSE (8.1-day TAT, 24.8% of total time)</strong>.</p>
     <div class="comm-callout comm-info"><strong>Together, these two combinations consume 55.1% of total processing capacity</strong> despite representing only 15.5% of claim volume. This is the single highest-leverage finding in the data.</div>
 
     <h3>Areas of Greatest Concern</h3>
-    <p><strong>1. Scanning Channel — The Primary Bottleneck.</strong> The Scanning channel processes 17.6% of claims (20,326) yet has a mean TAT of <strong>16.1 days</strong> — more than 5× the next-slowest channel (ECLIPSE at 6.8 days) and 23× the fastest high-volume channel (Claims Portal at 0.7 days). Scanning's P95 TAT is 55 days.</p>
+    <p><strong>1. Scanning Channel - The Primary Bottleneck.</strong> The Scanning channel processes 17.6% of claims (20,326) yet has a mean TAT of <strong>16.1 days</strong> - more than 5× the next-slowest channel (ECLIPSE at 6.8 days) and 23× the fastest high-volume channel (Claims Portal at 0.7 days). Scanning's P95 TAT is 55 days.</p>
     <div class="comm-callout comm-warn">The Scanning channel contributes <strong>47.6%</strong> of all processing days despite handling only 17.6% of volume.</div>
 
-    <p><strong>2. Medical Claims — High Rejection, High Variance.</strong> Medical claims carry a <strong>40.6% rejection rate</strong>, nearly double Ancillary (21.3%) and 2.5× Hospital (15.9%). The mean TAT of 9.1 days has extreme variance (std dev 15.8), driven by Medical×Scanning at 21.5 days average.</p>
+    <p><strong>2. Medical Claims - High Rejection, High Variance.</strong> Medical claims carry a <strong>40.6% rejection rate</strong>, nearly double Ancillary (21.3%) and 2.5× Hospital (15.9%). The mean TAT of 9.1 days has extreme variance (std dev 15.8), driven by Medical×Scanning at 21.5 days average.</p>
 
-    <p><strong>3. Agent Workload Imbalance.</strong> The top 10 agents by volume almost exclusively handle single claim types — 7 of 10 handle only Ancillary claims (≈3-day TAT). Agents HDR (42.1-day mean TAT, 1,031 claims) and MDD (37.8 days, 964 claims) are significant outliers warranting investigation.</p>
+    <p><strong>3. Agent Workload Imbalance.</strong> The top 10 agents by volume almost exclusively handle single claim types - 7 of 10 handle only Ancillary claims (≈3-day TAT). Agents HDR (42.1-day mean TAT, 1,031 claims) and MDD (37.8 days, 964 claims) are significant outliers warranting investigation.</p>
 
     <h3>Data Quality & Assumptions</h3>
     <ul>
-      <li><strong>Processing days verified:</strong> Independently derived from ReceivedDate/ProcessDate — confirmed consistent with the provided field.</li>
+      <li><strong>Processing days verified:</strong> Independently derived from ReceivedDate/ProcessDate - confirmed consistent with the provided field.</li>
       <li><strong>Expired claims (n=27):</strong> All exactly 95 processing days, exclusively Medical. Auto-expired at a policy threshold. Included in volume but flagged in TAT analysis.</li>
-      <li><strong>Suspended claims (n=17):</strong> Retained — 0.01% of total.</li>
+      <li><strong>Suspended claims (n=17):</strong> Retained - 0.01% of total.</li>
       <li><strong>Outlier treatment:</strong> 14.8% of claims exceed IQR upper fence (11 days). Retained as genuine operational volume. Median and P95 reported alongside means.</li>
-      <li><strong>Zero-day claims (n=24,000, 20.8%):</strong> Concentrated in Claims Portal (63%) and ECLIPSE (21%) — likely auto-adjudicated. Included in all analyses.</li>
-      <li><strong>Date range:</strong> Jan–Nov 2021. 94% of volume in Sep–Oct 2021. Earlier months likely reflect system ramp-up.</li>
-      <li><strong>Duplicate Client_IDs (45,904 rows):</strong> Expected — members submit multiple claims. No deduplication performed.</li>
+      <li><strong>Zero-day claims (n=24,000, 20.8%):</strong> Concentrated in Claims Portal (63%) and ECLIPSE (21%) - likely auto-adjudicated. Included in all analyses.</li>
+      <li><strong>Date range:</strong> Jan-Nov 2021. 94% of volume in Sep-Oct 2021. Earlier months likely reflect system ramp-up.</li>
+      <li><strong>Duplicate Client_IDs (45,904 rows):</strong> Expected - members submit multiple claims. No deduplication performed.</li>
     </ul>
 
     <h3>Methodology Notes</h3>

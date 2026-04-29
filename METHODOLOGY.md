@@ -3,7 +3,7 @@
 
 **Version:** 1.0  
 **Prepared by:** Rakshit Puniani  
-**Data Period:** January – November 2021  
+**Data Period:** January - November 2021  
 **Dataset:** 115,529 claim records  
 
 ---
@@ -14,14 +14,14 @@
 - **File:** `Health Insurer Claims Data Set copy (1).xlsx`
 - **Records:** 115,529 rows (one row per claim)
 - **Date Range:** ReceivedDate from 2021-01-04 to 2021-11-30; ProcessDate from 2021-01-04 to 2021-12-08
-- **Temporal Note:** 94% of claim volume (108,961 claims) is concentrated in September–October 2021. Earlier months (January–August) contain significantly lower volumes and may represent system ramp-up, pilot testing, or migration artefacts
+- **Temporal Note:** 94% of claim volume (108,961 claims) is concentrated in September-October 2021. Earlier months (January-August) contain significantly lower volumes and may represent system ramp-up, pilot testing, or migration artefacts
 
 ### 1.2 Fields Used
 
 | Field | Type | Description |
 |-------|------|-------------|
 | `Claim_No` | String | Unique claim identifier |
-| `Client_ID` | String | Member/policyholder identifier (not unique — members submit multiple claims) |
+| `Client_ID` | String | Member/policyholder identifier (not unique - members submit multiple claims) |
 | `ReceivedDate` | Date | Date claim was received by the insurer |
 | `ProcessDate` | Date | Date claim processing was completed |
 | `Processing days` | Integer | Days between ReceivedDate and ProcessDate (provided in source) |
@@ -48,7 +48,7 @@ Processing Days = ProcessDate − ReceivedDate (in calendar days)
 | Missing values | No nulls in any analysis field | N/A |
 | Negative processing days | 0 records | N/A |
 | Duplicate Claim_No | 0 duplicates | N/A |
-| Duplicate Client_ID | 45,904 rows share Client_IDs | Expected — members file multiple claims. No deduplication performed |
+| Duplicate Client_ID | 45,904 rows share Client_IDs | Expected - members file multiple claims. No deduplication performed |
 | Date range validity | All dates within 2021 | Confirmed |
 
 ### 2.3 No Data Exclusions
@@ -88,13 +88,13 @@ All 115,529 records are included in every analysis. No records were removed as o
 
 | Channel | Likely Intake Method | Volume |
 |---------|---------------------|--------|
-| Mobile App | Digital — mobile application | 34,080 |
-| ECLIPSE | System — internal processing platform | 29,411 |
-| Scanning | Manual — document scanning/digitisation | 20,326 |
-| Claims Portal | Digital — web portal (provider-facing) | 15,935 |
-| Member Portal | Digital — web portal (member-facing) | 15,385 |
-| NSW Ambulance | Automated — state ambulance feed | 335 |
-| CA Dental | Automated — dental network feed | 57 |
+| Mobile App | Digital - mobile application | 34,080 |
+| ECLIPSE | System - internal processing platform | 29,411 |
+| Scanning | Manual - document scanning/digitisation | 20,326 |
+| Claims Portal | Digital - web portal (provider-facing) | 15,935 |
+| Member Portal | Digital - web portal (member-facing) | 15,385 |
+| NSW Ambulance | Automated - state ambulance feed | 335 |
+| CA Dental | Automated - dental network feed | 57 |
 
 ### 3.4 Claim Type Definitions
 
@@ -116,12 +116,12 @@ Processing days are bucketed into 10 bins chosen to balance granularity at the f
 | Same day | 0 days | Likely auto-adjudicated |
 | 1 day | 1 day | Near-instant manual processing |
 | 2 days | 2 days | Standard fast processing |
-| 3–4 days | 3–4 days | Typical SLA window |
-| 5–6 days | 5–6 days | Extended standard processing |
-| 7–13 days | 7–13 days | Slow — first week+ |
-| 14–29 days | 14–29 days | Slow — multi-week |
-| 30–59 days | 30–59 days | Very slow — monthly+ |
-| 60–99 days | 60–99 days | Extreme outlier territory |
+| 3-4 days | 3-4 days | Typical SLA window |
+| 5-6 days | 5-6 days | Extended standard processing |
+| 7-13 days | 7-13 days | Slow - first week+ |
+| 14-29 days | 14-29 days | Slow - multi-week |
+| 30-59 days | 30-59 days | Very slow - monthly+ |
+| 60-99 days | 60-99 days | Extreme outlier territory |
 | 100+ days | ≥100 days | Exceptional cases |
 
 ### 4.2 Heatmap: % of Total Processing Time
@@ -139,7 +139,7 @@ This metric is superior to simple volume or mean TAT because it captures the **c
 ### 4.3 Outlier Analysis
 - **IQR Method:** Q1 = 1, Q3 = 5, IQR = 4. Upper fence = Q3 + 1.5 × IQR = 11 days
 - **Claims exceeding upper fence:** 17,091 (14.8%)
-- **Decision:** Retained in all analyses. These claims are not measurement errors — they represent the operational bottleneck under investigation. Removing them would eliminate the signal the analysis is designed to detect.
+- **Decision:** Retained in all analyses. These claims are not measurement errors - they represent the operational bottleneck under investigation. Removing them would eliminate the signal the analysis is designed to detect.
 
 ### 4.4 Agent Performance Ranking
 Agents are ranked by **Mean TAT (descending)** to surface the most problematic (slowest) first. This ranking must be interpreted in context:
@@ -157,8 +157,8 @@ Agents are ranked by **Mean TAT (descending)** to surface the most problematic (
 | Build Tool | Vite | 5.4.x |
 | Charts | Chart.js | 3.9.1 |
 | Data Labels | chartjs-plugin-datalabels | 2.x |
-| Fonts | Google Fonts (Inter, Playfair Display) | — |
-| Hosting | Vercel | — |
+| Fonts | Google Fonts (Inter, Playfair Display) | - |
+| Hosting | Vercel | - |
 
 ### 5.2 Colour System
 Colours are drawn from the Coxswain Alliance brand palette with functional extensions:
