@@ -19,6 +19,22 @@ window.addEventListener('scroll', () => {
   if (h > 0) document.getElementById('progress-bar').style.width = ((window.scrollY / h) * 100) + '%';
 });
 
+/* ── Chapter nav active tracking ── */
+const navDots = document.querySelectorAll('.nav-dot');
+const sections = document.querySelectorAll('#hero, #ch1, #ch2, #ch3, #ch4, #ch5, #ch6, #ch7');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navDots.forEach(dot => dot.classList.remove('active'));
+      const activeLink = document.querySelector(`.nav-dot[href="#${entry.target.id}"]`);
+      if (activeLink) activeLink.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+
+sections.forEach(s => observer.observe(s));
+
 /* Chart defaults */
 Chart.defaults.color = '#3d5068';
 Chart.defaults.borderColor = '#dde2ec';
