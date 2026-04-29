@@ -19,10 +19,26 @@ window.addEventListener('scroll', () => {
   if (h > 0) document.getElementById('progress-bar').style.width = ((window.scrollY / h) * 100) + '%';
 });
 
-/* ── Chapter nav active tracking ── */
+/* ── Chapter nav: show after hero ── */
+const chapterNav = document.getElementById('chapter-nav');
+const heroEl = document.getElementById('hero');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('#hero, #ch1, #ch2, #ch3, #ch4, #ch5, #ch6, #ch7');
 
+// Show/hide navbar based on hero visibility
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      chapterNav.classList.remove('visible');
+    } else {
+      chapterNav.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+heroObserver.observe(heroEl);
+
+// Active chapter tracking
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
