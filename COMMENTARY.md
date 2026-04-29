@@ -1,4 +1,6 @@
 # Analytical Commentary
+## Medical via Scanning and Hospital via ECLIPSE - consume 55.1% of all processing time while representing just 15.5% of claim volume.
+##
 ## Health Insurer Claims Operations
 **Rakshit Puniani | Data Period: Jan-Nov 2021 | 115,529 Claims**
 
