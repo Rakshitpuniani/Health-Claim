@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Health Insurer Claims Operations — Data-driven story uncovering where processing time really goes." />
+  <title>Where Does the Time Go? | Claims Operations Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- Progress bar -->
+  <div id="progress-bar"></div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Health Insurer Claims Operations · 115,529 claims analysed</p>
+      <h1 class="hero-title">Where Does the <span class="accent-gradient">Time</span> Go?</h1>
+      <p class="hero-subtitle">One channel processes <strong>17.6%</strong> of claims — yet consumes nearly <strong>half</strong> of all processing days. This is the story the data tells.</p>
+      <div class="hero-scroll-cue">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH1: THE BIG PICTURE -->
+  <section class="story-section" id="ch1">
+    <div class="section-container">
+      <div class="chapter-label">Chapter 1</div>
+      <h2 class="section-title">The Big Picture</h2>
+      <p class="section-lead">At first glance, the operation looks healthy. Claims are resolved, volumes are managed, and agents are processing.</p>
+      <div class="kpi-strip" id="kpi-strip"></div>
+      <div class="insight-callout insight-positive">
+        <div class="insight-icon">✓</div>
+        <div><strong>99.96% resolution rate.</strong> Only 44 claims out of 115,529 remain unresolved (Expired or Suspended). The operation is completing its work.</div>
+      </div>
+      <div class="chart-pair">
+        <div class="chart-card">
+          <h3>How Claims Are Resolved</h3>
+          <p class="chart-subtitle">Expired (27) and Suspended (17) are &lt;0.04% combined — visible on hover</p>
+          <div class="chart-wrap"><canvas id="chart-status"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>When Claims Arrive — Monthly Volume</h3>
+          <div class="chart-wrap"><canvas id="chart-monthly-vol"></canvas></div>
+        </div>
+      </div>
+      <p class="narrative">But resolution rate only tells half the story. The real question is: <em>how long</em> does it take?</p>
+    </div>
+  </section>
+
+  <!-- CH2: THE SPEED STORY -->
+  <section class="story-section section-alt" id="ch2">
+    <div class="section-container">
+      <div class="chapter-label">Chapter 2</div>
+      <h2 class="section-title">The Speed Story</h2>
+      <p class="section-lead">The median turnaround is just 3 days. But averages lie — the distribution reveals a long, heavy tail.</p>
+      <div class="stat-highlight-row">
+        <div class="stat-highlight">
+          <span class="stat-big">5.95</span>
+          <span class="stat-desc">Mean TAT (days)</span>
+        </div>
+        <div class="stat-highlight">
+          <span class="stat-big accent-teal">3</span>
+          <span class="stat-desc">Median TAT (days)</span>
+        </div>
+        <div class="stat-highlight">
+          <span class="stat-big accent-amber">26</span>
+          <span class="stat-desc">95th percentile</span>
+        </div>
+        <div class="stat-highlight">
+          <span class="stat-big accent-red">258</span>
+          <span class="stat-desc">Maximum (days)</span>
+        </div>
+      </div>
+      <div class="chart-card chart-full">
+        <h3>How Long Claims Really Take</h3>
+        <p class="chart-subtitle">Processing days distribution — 20.8% are same-day, but 14.8% take more than 11 days</p>
+        <div class="chart-wrap chart-wrap-tall"><canvas id="chart-tat-dist"></canvas></div>
+      </div>
+      <div class="insight-callout insight-warning">
+        <div class="insight-icon">⚠</div>
+        <div><strong>The gap between mean (5.95) and median (3) signals skew.</strong> A small proportion of claims are dragging the average up dramatically. Where are they coming from?</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH3: THE BOTTLENECK -->
+  <section class="story-section" id="ch3">
+    <div class="section-container">
+      <div class="chapter-label">Chapter 3</div>
+      <h2 class="section-title">The Bottleneck: <span class="accent-gradient">Scanning</span></h2>
+      <p class="section-lead">Not all channels are equal. One stands dramatically apart from the rest.</p>
+      <div class="chart-pair">
+        <div class="chart-card">
+          <h3>Volume by Channel</h3>
+          <div class="chart-wrap"><canvas id="chart-channel-vol"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Mean TAT by Channel</h3>
+          <p class="chart-subtitle">Scanning is 5× slower than the next channel</p>
+          <div class="chart-wrap"><canvas id="chart-channel-tat"></canvas></div>
+        </div>
+      </div>
+      <div class="insight-callout insight-danger">
+        <div class="insight-icon">🔴</div>
+        <div><strong>Scanning: 16.1-day mean TAT.</strong> It handles 17.6% of volume but consumes 47.6% of all processing days. Claims Portal processes similar volumes in 0.7 days on average.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH4: THE HEATMAP -->
+  <section class="story-section section-alt" id="ch4">
+    <div class="section-container">
+      <div class="chapter-label">Chapter 4</div>
+      <h2 class="section-title">Where Capacity Is Consumed</h2>
+      <p class="section-lead">Cross-referencing channels with claim types reveals exactly which combinations are eating the most time.</p>
+      <div class="chart-card chart-full">
+        <h3>Channel × Claim Type — % of Total Processing Time</h3>
+        <p class="chart-subtitle">Colour intensity = share of 687,634 total processing days consumed</p>
+        <div id="heatmap-container"></div>
+      </div>
+      <div class="insight-callout insight-danger">
+        <div class="insight-icon">🎯</div>
+        <div><strong>Two cells tell the whole story.</strong> Medical × Scanning (30.3%) and Hospital × ECLIPSE (24.8%) together consume 55.1% of all processing time — despite representing just 15.5% of claim volume.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH5: CLAIM TYPES -->
+  <section class="story-section" id="ch5">
+    <div class="section-container">
+      <div class="chapter-label">Chapter 5</div>
+      <h2 class="section-title">Not All Claims Are Equal</h2>
+      <p class="section-lead">Medical claims take the longest, get rejected the most, and show the widest variance.</p>
+      <div class="chart-pair">
+        <div class="chart-card">
+          <h3>TAT Comparison by Claim Type</h3>
+          <div class="chart-wrap"><canvas id="chart-type-tat"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Rejection Rates</h3>
+          <p class="chart-subtitle">Medical rejection rate is 2.5× higher than Hospital</p>
+          <div class="chart-wrap"><canvas id="chart-type-reject"></canvas></div>
+        </div>
+      </div>
+      <div class="type-cards" id="type-cards"></div>
+    </div>
+  </section>
+
+  <!-- CH6: AGENTS -->
+  <section class="story-section section-alt" id="ch6">
+    <div class="section-container">
+      <div class="chapter-label">Chapter 6</div>
+      <h2 class="section-title">The People Behind the Numbers</h2>
+      <p class="section-lead">242 agents process claims — but performance varies dramatically, partly due to the type of work they handle.</p>
+      <div class="chart-pair">
+        <div class="chart-card">
+          <h3>Agent Volume vs. Speed</h3>
+          <p class="chart-subtitle">Each bubble = one agent. Colour = performance tier</p>
+          <div class="chart-wrap chart-wrap-tall"><canvas id="chart-agent-scatter"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Slowest Agents (≥100 claims)</h3>
+          <p class="chart-subtitle">May reflect case complexity, not underperformance</p>
+          <div class="chart-wrap chart-wrap-tall"><canvas id="chart-slow-agents"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-card chart-full">
+        <h3>Top 30 Agents — Performance Detail</h3>
+        <div class="table-scroll" id="agent-table-container"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH7: COMMENTARY -->
+  <section class="story-section" id="ch7">
+    <div class="section-container">
+      <div class="chapter-label">Chapter 7</div>
+      <h2 class="section-title">What This Means</h2>
+      <div class="commentary" id="commentary"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Claims Operations Analysis · Rakshit Puniani · Data period: Jan–Nov 2021 · 115,529 claims</p>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

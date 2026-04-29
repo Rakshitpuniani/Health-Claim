@@ -1,0 +1,1033 @@
+{
+  "kpis": {
+    "totalClaims": 115529,
+    "paidCount": 87059,
+    "rejectedCount": 28426,
+    "expiredCount": 27,
+    "suspendedCount": 17,
+    "paidPct": 75.36,
+    "rejectedPct": 24.61,
+    "expiredPct": 0.02,
+    "suspendedPct": 0.01,
+    "resolvedPct": 99.96,
+    "meanTAT": 5.95,
+    "medianTAT": 3,
+    "p95TAT": 26,
+    "maxTAT": 258,
+    "sameDayCount": 24000,
+    "sameDayPct": 20.77
+  },
+  "tatDistribution": [
+    {
+      "label": "Same day",
+      "count": 24000,
+      "pct": 20.77
+    },
+    {
+      "label": "1 day",
+      "count": 19435,
+      "pct": 16.82
+    },
+    {
+      "label": "2 days",
+      "count": 10013,
+      "pct": 8.67
+    },
+    {
+      "label": "3-4 days",
+      "count": 23557,
+      "pct": 20.39
+    },
+    {
+      "label": "5-6 days",
+      "count": 14013,
+      "pct": 12.13
+    },
+    {
+      "label": "7-13 days",
+      "count": 10293,
+      "pct": 8.91
+    },
+    {
+      "label": "14-29 days",
+      "count": 9547,
+      "pct": 8.26
+    },
+    {
+      "label": "30-59 days",
+      "count": 3826,
+      "pct": 3.31
+    },
+    {
+      "label": "60-99 days",
+      "count": 773,
+      "pct": 0.67
+    },
+    {
+      "label": "100+ days",
+      "count": 72,
+      "pct": 0.06
+    }
+  ],
+  "statusBreakdown": [
+    {
+      "status": "Paid",
+      "count": 87059,
+      "pct": 75.36
+    },
+    {
+      "status": "Rejected",
+      "count": 28426,
+      "pct": 24.61
+    },
+    {
+      "status": "Expired",
+      "count": 27,
+      "pct": 0.02
+    },
+    {
+      "status": "Suspended",
+      "count": 17,
+      "pct": 0.01
+    }
+  ],
+  "claimTypes": [
+    {
+      "type": "Ancillary",
+      "count": 56279,
+      "pct": 48.71,
+      "meanTAT": 2.58,
+      "medianTAT": 3,
+      "p95TAT": 5,
+      "maxTAT": 123,
+      "paidPct": 78.67,
+      "rejectedPct": 21.31
+    },
+    {
+      "type": "Hospital",
+      "count": 30851,
+      "pct": 26.7,
+      "meanTAT": 9.19,
+      "medianTAT": 5,
+      "p95TAT": 32,
+      "maxTAT": 239,
+      "paidPct": 84.09,
+      "rejectedPct": 15.91
+    },
+    {
+      "type": "Medical",
+      "count": 28399,
+      "pct": 24.58,
+      "meanTAT": 9.11,
+      "medianTAT": 2,
+      "p95TAT": 47,
+      "maxTAT": 258,
+      "paidPct": 59.29,
+      "rejectedPct": 40.59
+    }
+  ],
+  "channels": [
+    {
+      "channel": "Mobile App",
+      "count": 34080,
+      "pct": 29.5,
+      "meanTAT": 2.99,
+      "medianTAT": 3,
+      "p95TAT": 5,
+      "maxTAT": 123
+    },
+    {
+      "channel": "ECLIPSE",
+      "count": 29411,
+      "pct": 25.46,
+      "meanTAT": 6.79,
+      "medianTAT": 2,
+      "p95TAT": 28,
+      "maxTAT": 197
+    },
+    {
+      "channel": "Scanning",
+      "count": 20326,
+      "pct": 17.59,
+      "meanTAT": 16.11,
+      "medianTAT": 12,
+      "p95TAT": 55,
+      "maxTAT": 258
+    },
+    {
+      "channel": "Claims Portal",
+      "count": 15935,
+      "pct": 13.79,
+      "meanTAT": 0.7,
+      "medianTAT": 0,
+      "p95TAT": 0,
+      "maxTAT": 200
+    },
+    {
+      "channel": "Member Portal",
+      "count": 15385,
+      "pct": 13.32,
+      "meanTAT": 3.02,
+      "medianTAT": 3,
+      "p95TAT": 5,
+      "maxTAT": 63
+    },
+    {
+      "channel": "NSW Ambulance",
+      "count": 335,
+      "pct": 0.29,
+      "meanTAT": 2.53,
+      "medianTAT": 2,
+      "p95TAT": 6,
+      "maxTAT": 7
+    },
+    {
+      "channel": "CA Dental",
+      "count": 57,
+      "pct": 0.05,
+      "meanTAT": 0.0,
+      "medianTAT": 0,
+      "p95TAT": 0,
+      "maxTAT": 0
+    }
+  ],
+  "heatmap": [
+    {
+      "channel": "CA Dental",
+      "claimType": "Ancillary",
+      "volume": 57,
+      "meanTAT": 0.0,
+      "pctTotalTime": 0.0
+    },
+    {
+      "channel": "CA Dental",
+      "claimType": "Hospital",
+      "volume": 0,
+      "meanTAT": null,
+      "pctTotalTime": 0
+    },
+    {
+      "channel": "CA Dental",
+      "claimType": "Medical",
+      "volume": 0,
+      "meanTAT": null,
+      "pctTotalTime": 0
+    },
+    {
+      "channel": "Claims Portal",
+      "claimType": "Ancillary",
+      "volume": 12037,
+      "meanTAT": 0.08,
+      "pctTotalTime": 0.15
+    },
+    {
+      "channel": "Claims Portal",
+      "claimType": "Hospital",
+      "volume": 1845,
+      "meanTAT": 0.04,
+      "pctTotalTime": 0.01
+    },
+    {
+      "channel": "Claims Portal",
+      "claimType": "Medical",
+      "volume": 2053,
+      "meanTAT": 4.89,
+      "pctTotalTime": 1.46
+    },
+    {
+      "channel": "ECLIPSE",
+      "claimType": "Ancillary",
+      "volume": 0,
+      "meanTAT": null,
+      "pctTotalTime": 0
+    },
+    {
+      "channel": "ECLIPSE",
+      "claimType": "Hospital",
+      "volume": 21220,
+      "meanTAT": 8.05,
+      "pctTotalTime": 24.84
+    },
+    {
+      "channel": "ECLIPSE",
+      "claimType": "Medical",
+      "volume": 8191,
+      "meanTAT": 3.53,
+      "pctTotalTime": 4.21
+    },
+    {
+      "channel": "Member Portal",
+      "claimType": "Ancillary",
+      "volume": 12374,
+      "meanTAT": 3.38,
+      "pctTotalTime": 6.08
+    },
+    {
+      "channel": "Member Portal",
+      "claimType": "Hospital",
+      "volume": 0,
+      "meanTAT": null,
+      "pctTotalTime": 0
+    },
+    {
+      "channel": "Member Portal",
+      "claimType": "Medical",
+      "volume": 3011,
+      "meanTAT": 1.54,
+      "pctTotalTime": 0.68
+    },
+    {
+      "channel": "Mobile App",
+      "claimType": "Ancillary",
+      "volume": 28631,
+      "meanTAT": 3.32,
+      "pctTotalTime": 13.81
+    },
+    {
+      "channel": "Mobile App",
+      "claimType": "Hospital",
+      "volume": 0,
+      "meanTAT": null,
+      "pctTotalTime": 0
+    },
+    {
+      "channel": "Mobile App",
+      "claimType": "Medical",
+      "volume": 5449,
+      "meanTAT": 1.3,
+      "pctTotalTime": 1.03
+    },
+    {
+      "channel": "NSW Ambulance",
+      "claimType": "Ancillary",
+      "volume": 335,
+      "meanTAT": 2.53,
+      "pctTotalTime": 0.12
+    },
+    {
+      "channel": "NSW Ambulance",
+      "claimType": "Hospital",
+      "volume": 0,
+      "meanTAT": null,
+      "pctTotalTime": 0
+    },
+    {
+      "channel": "NSW Ambulance",
+      "claimType": "Medical",
+      "volume": 0,
+      "meanTAT": null,
+      "pctTotalTime": 0
+    },
+    {
+      "channel": "Scanning",
+      "claimType": "Ancillary",
+      "volume": 2845,
+      "meanTAT": 2.3,
+      "pctTotalTime": 0.95
+    },
+    {
+      "channel": "Scanning",
+      "claimType": "Hospital",
+      "volume": 7786,
+      "meanTAT": 14.49,
+      "pctTotalTime": 16.41
+    },
+    {
+      "channel": "Scanning",
+      "claimType": "Medical",
+      "volume": 9695,
+      "meanTAT": 21.47,
+      "pctTotalTime": 30.26
+    }
+  ],
+  "agents": [
+    {
+      "userId": "HBY",
+      "count": 3728,
+      "meanTAT": 3.15,
+      "medianTAT": 3,
+      "p95TAT": 5,
+      "maxTAT": 26,
+      "claimMix": {
+        "Ancillary": 100.0,
+        "Hospital": 0.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "MUQ",
+      "count": 3552,
+      "meanTAT": 13.45,
+      "medianTAT": 14,
+      "p95TAT": 28,
+      "maxTAT": 73,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "Scanning"
+    },
+    {
+      "userId": "DYL",
+      "count": 3442,
+      "meanTAT": 3.37,
+      "medianTAT": 3,
+      "p95TAT": 5,
+      "maxTAT": 68,
+      "claimMix": {
+        "Ancillary": 84.5,
+        "Hospital": 0.0,
+        "Medical": 15.5
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "HGH",
+      "count": 3358,
+      "meanTAT": 3.07,
+      "medianTAT": 3,
+      "p95TAT": 5,
+      "maxTAT": 60,
+      "claimMix": {
+        "Ancillary": 100.0,
+        "Hospital": 0.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "BMF",
+      "count": 3289,
+      "meanTAT": 3.12,
+      "medianTAT": 3,
+      "p95TAT": 6,
+      "maxTAT": 35,
+      "claimMix": {
+        "Ancillary": 100.0,
+        "Hospital": 0.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "HBW",
+      "count": 3230,
+      "meanTAT": 3.64,
+      "medianTAT": 3,
+      "p95TAT": 6,
+      "maxTAT": 123,
+      "claimMix": {
+        "Ancillary": 100.0,
+        "Hospital": 0.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "LGF",
+      "count": 3158,
+      "meanTAT": 1.49,
+      "medianTAT": 1,
+      "p95TAT": 5,
+      "maxTAT": 64,
+      "claimMix": {
+        "Ancillary": 5.2,
+        "Hospital": 0.0,
+        "Medical": 94.8
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "NCG",
+      "count": 2961,
+      "meanTAT": 2.77,
+      "medianTAT": 3,
+      "p95TAT": 6,
+      "maxTAT": 62,
+      "claimMix": {
+        "Ancillary": 100.0,
+        "Hospital": 0.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "JRW",
+      "count": 2894,
+      "meanTAT": 3.31,
+      "medianTAT": 3,
+      "p95TAT": 5,
+      "maxTAT": 12,
+      "claimMix": {
+        "Ancillary": 100.0,
+        "Hospital": 0.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "HCA",
+      "count": 2690,
+      "meanTAT": 3.58,
+      "medianTAT": 3,
+      "p95TAT": 6,
+      "maxTAT": 62,
+      "claimMix": {
+        "Ancillary": 100.0,
+        "Hospital": 0.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "NFD",
+      "count": 2665,
+      "meanTAT": 2.08,
+      "medianTAT": 1,
+      "p95TAT": 6,
+      "maxTAT": 35,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "EQM",
+      "count": 2636,
+      "meanTAT": 6.23,
+      "medianTAT": 3,
+      "p95TAT": 18,
+      "maxTAT": 61,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "MUP",
+      "count": 2487,
+      "meanTAT": 12.65,
+      "medianTAT": 11,
+      "p95TAT": 34,
+      "maxTAT": 41,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "Scanning"
+    },
+    {
+      "userId": "KXF",
+      "count": 2436,
+      "meanTAT": 3.49,
+      "medianTAT": 3,
+      "p95TAT": 6,
+      "maxTAT": 63,
+      "claimMix": {
+        "Ancillary": 91.2,
+        "Hospital": 0.0,
+        "Medical": 8.8
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "LSP",
+      "count": 2360,
+      "meanTAT": 3.47,
+      "medianTAT": 3,
+      "p95TAT": 10,
+      "maxTAT": 21,
+      "claimMix": {
+        "Ancillary": 73.0,
+        "Hospital": 0.0,
+        "Medical": 27.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "NEQ",
+      "count": 2290,
+      "meanTAT": 1.33,
+      "medianTAT": 1,
+      "p95TAT": 4,
+      "maxTAT": 49,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "CNK",
+      "count": 2228,
+      "meanTAT": 4.3,
+      "medianTAT": 1,
+      "p95TAT": 21,
+      "maxTAT": 105,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "IST",
+      "count": 2228,
+      "meanTAT": 3.12,
+      "medianTAT": 1,
+      "p95TAT": 12,
+      "maxTAT": 61,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "KLI",
+      "count": 2220,
+      "meanTAT": 2.7,
+      "medianTAT": 3,
+      "p95TAT": 5,
+      "maxTAT": 34,
+      "claimMix": {
+        "Ancillary": 100.0,
+        "Hospital": 0.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "HHD",
+      "count": 2203,
+      "meanTAT": 3.15,
+      "medianTAT": 3,
+      "p95TAT": 6,
+      "maxTAT": 49,
+      "claimMix": {
+        "Ancillary": 94.1,
+        "Hospital": 0.0,
+        "Medical": 5.9
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "NEP",
+      "count": 2094,
+      "meanTAT": 1.14,
+      "medianTAT": 1,
+      "p95TAT": 5,
+      "maxTAT": 28,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "KWO",
+      "count": 2081,
+      "meanTAT": 4.22,
+      "medianTAT": 1,
+      "p95TAT": 19,
+      "maxTAT": 137,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "HDW",
+      "count": 2053,
+      "meanTAT": 11.24,
+      "medianTAT": 8,
+      "p95TAT": 32,
+      "maxTAT": 108,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "LBK",
+      "count": 1983,
+      "meanTAT": 4.11,
+      "medianTAT": 2,
+      "p95TAT": 18,
+      "maxTAT": 64,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "BZJ",
+      "count": 1951,
+      "meanTAT": 3.16,
+      "medianTAT": 3,
+      "p95TAT": 5,
+      "maxTAT": 71,
+      "claimMix": {
+        "Ancillary": 100.0,
+        "Hospital": 0.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "NAN",
+      "count": 1935,
+      "meanTAT": 1.85,
+      "medianTAT": 1,
+      "p95TAT": 5,
+      "maxTAT": 12,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "HZR",
+      "count": 1839,
+      "meanTAT": 3.15,
+      "medianTAT": 3,
+      "p95TAT": 5,
+      "maxTAT": 14,
+      "claimMix": {
+        "Ancillary": 100.0,
+        "Hospital": 0.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Mobile App"
+    },
+    {
+      "userId": "JJP",
+      "count": 1828,
+      "meanTAT": 8.88,
+      "medianTAT": 2,
+      "p95TAT": 37,
+      "maxTAT": 104,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "JLZ",
+      "count": 1724,
+      "meanTAT": 16.91,
+      "medianTAT": 16,
+      "p95TAT": 30,
+      "maxTAT": 227,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Scanning"
+    },
+    {
+      "userId": "BDZ",
+      "count": 1665,
+      "meanTAT": 7.75,
+      "medianTAT": 3,
+      "p95TAT": 30,
+      "maxTAT": 73,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "ECLIPSE"
+    }
+  ],
+  "slowAgents": [
+    {
+      "userId": "HDR",
+      "count": 1031,
+      "meanTAT": 42.06,
+      "medianTAT": 51,
+      "p95TAT": 75,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "Scanning"
+    },
+    {
+      "userId": "MDD",
+      "count": 964,
+      "meanTAT": 37.76,
+      "medianTAT": 38,
+      "p95TAT": 86,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "Scanning"
+    },
+    {
+      "userId": "AEL",
+      "count": 125,
+      "meanTAT": 29.88,
+      "medianTAT": 28,
+      "p95TAT": 95,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "LMR",
+      "count": 1630,
+      "meanTAT": 19.91,
+      "medianTAT": 21,
+      "p95TAT": 34,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "FER",
+      "count": 1496,
+      "meanTAT": 19.44,
+      "medianTAT": 7,
+      "p95TAT": 56,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "MDA",
+      "count": 946,
+      "meanTAT": 18.83,
+      "medianTAT": 8,
+      "p95TAT": 66,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "Scanning"
+    },
+    {
+      "userId": "MNS",
+      "count": 1175,
+      "meanTAT": 18.29,
+      "medianTAT": 15,
+      "p95TAT": 34,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Scanning"
+    },
+    {
+      "userId": "JLZ",
+      "count": 1724,
+      "meanTAT": 16.91,
+      "medianTAT": 16,
+      "p95TAT": 30,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "Scanning"
+    },
+    {
+      "userId": "CBF",
+      "count": 173,
+      "meanTAT": 15.42,
+      "medianTAT": 9,
+      "p95TAT": 42,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 100.0,
+        "Medical": 0.0
+      },
+      "primaryChannel": "ECLIPSE"
+    },
+    {
+      "userId": "MVL",
+      "count": 592,
+      "meanTAT": 15.26,
+      "medianTAT": 14,
+      "p95TAT": 25,
+      "claimMix": {
+        "Ancillary": 0.0,
+        "Hospital": 0.0,
+        "Medical": 100.0
+      },
+      "primaryChannel": "Scanning"
+    }
+  ],
+  "monthlyTrend": [
+    {
+      "month": "2021-01",
+      "count": 15,
+      "meanTAT": 31.87,
+      "medianTAT": 8
+    },
+    {
+      "month": "2021-02",
+      "count": 20,
+      "meanTAT": 28.45,
+      "medianTAT": 16
+    },
+    {
+      "month": "2021-03",
+      "count": 28,
+      "meanTAT": 57.11,
+      "medianTAT": 14
+    },
+    {
+      "month": "2021-04",
+      "count": 28,
+      "meanTAT": 32.75,
+      "medianTAT": 8
+    },
+    {
+      "month": "2021-05",
+      "count": 43,
+      "meanTAT": 46.3,
+      "medianTAT": 9
+    },
+    {
+      "month": "2021-06",
+      "count": 117,
+      "meanTAT": 68.78,
+      "medianTAT": 95
+    },
+    {
+      "month": "2021-07",
+      "count": 408,
+      "meanTAT": 60.15,
+      "medianTAT": 67
+    },
+    {
+      "month": "2021-08",
+      "count": 2179,
+      "meanTAT": 41.66,
+      "medianTAT": 38
+    },
+    {
+      "month": "2021-09",
+      "count": 37679,
+      "meanTAT": 8.19,
+      "medianTAT": 3
+    },
+    {
+      "month": "2021-10",
+      "count": 71282,
+      "meanTAT": 3.5,
+      "medianTAT": 3
+    },
+    {
+      "month": "2021-11",
+      "count": 3730,
+      "meanTAT": 0.21,
+      "medianTAT": 0
+    }
+  ],
+  "monthlyByType": [
+    {
+      "month": "2021-01",
+      "Ancillary": 5,
+      "Hospital": 3,
+      "Medical": 7
+    },
+    {
+      "month": "2021-02",
+      "Ancillary": 0,
+      "Hospital": 8,
+      "Medical": 12
+    },
+    {
+      "month": "2021-03",
+      "Ancillary": 4,
+      "Hospital": 12,
+      "Medical": 12
+    },
+    {
+      "month": "2021-04",
+      "Ancillary": 4,
+      "Hospital": 9,
+      "Medical": 15
+    },
+    {
+      "month": "2021-05",
+      "Ancillary": 11,
+      "Hospital": 16,
+      "Medical": 16
+    },
+    {
+      "month": "2021-06",
+      "Ancillary": 13,
+      "Hospital": 40,
+      "Medical": 64
+    },
+    {
+      "month": "2021-07",
+      "Ancillary": 31,
+      "Hospital": 82,
+      "Medical": 295
+    },
+    {
+      "month": "2021-08",
+      "Ancillary": 93,
+      "Hospital": 870,
+      "Medical": 1216
+    },
+    {
+      "month": "2021-09",
+      "Ancillary": 14121,
+      "Hospital": 12941,
+      "Medical": 10617
+    },
+    {
+      "month": "2021-10",
+      "Ancillary": 40131,
+      "Hospital": 16036,
+      "Medical": 15115
+    },
+    {
+      "month": "2021-11",
+      "Ancillary": 1866,
+      "Hospital": 834,
+      "Medical": 1030
+    }
+  ]
+}
