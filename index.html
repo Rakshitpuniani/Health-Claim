@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Health Insurer Claims Operations - Data-driven story uncovering where processing time really goes." />
+  <meta name="description"
+    content="Health Insurer Claims Operations - Data-driven story uncovering where processing time really goes." />
   <title>Where Does the Time Go? | Claims Operations Analysis</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
   <!-- Progress bar -->
   <div id="progress-bar"></div>
@@ -20,7 +25,8 @@
     <div class="hero-inner">
       <p class="hero-eyebrow">Health Insurer Claims Operations · 115,529 claims analysed</p>
       <h1 class="hero-title">Where Does the <span class="accent-gradient">Time</span> Go?</h1>
-      <p class="hero-subtitle">One channel processes <strong>17.6%</strong> of claims - yet consumes nearly <strong>half</strong> of all processing days. This is the story the data tells.</p>
+      <p class="hero-subtitle">One channel processes <strong>17.6%</strong> of claims - yet consumes nearly
+        <strong>half</strong> of all processing days. This is the story the data tells.</p>
       <div class="hero-scroll-cue">
         <span>Scroll to explore</span>
         <div class="scroll-arrow">↓</div>
@@ -33,11 +39,13 @@
     <div class="section-container">
       <div class="chapter-label">Chapter 1</div>
       <h2 class="section-title">The Big Picture</h2>
-      <p class="section-lead">At first glance, the operation looks healthy. Claims are resolved, volumes are managed, and agents are processing.</p>
+      <p class="section-lead">At first glance, the operation looks healthy. Claims are resolved, volumes are managed,
+        and agents are processing.</p>
       <div class="kpi-strip" id="kpi-strip"></div>
       <div class="insight-callout insight-positive">
         <div class="insight-icon">✓</div>
-        <div><strong>99.96% resolution rate.</strong> Only 44 claims out of 115,529 remain unresolved (Expired or Suspended). The operation is completing its work.</div>
+        <div><strong>99.96% resolution rate.</strong> Only 44 claims out of 115,529 remain unresolved (Expired or
+          Suspended). The operation is completing its work.</div>
       </div>
       <div class="chart-pair">
         <div class="chart-card">
@@ -50,7 +58,8 @@
           <div class="chart-wrap"><canvas id="chart-monthly-vol"></canvas></div>
         </div>
       </div>
-      <p class="narrative">But resolution rate only tells half the story. The real question is: <em>how long</em> does it take?</p>
+      <p class="narrative">But resolution rate only tells half the story. The real question is: <em>how long</em> does
+        it take?</p>
     </div>
   </section>
 
@@ -59,7 +68,8 @@
     <div class="section-container">
       <div class="chapter-label">Chapter 2</div>
       <h2 class="section-title">The Speed Story</h2>
-      <p class="section-lead">The median turnaround is just 3 days. But averages lie - the distribution reveals a long, heavy tail.</p>
+      <p class="section-lead">The median turnaround is just 3 days. But averages lie - the distribution reveals a long,
+        heavy tail.</p>
       <div class="stat-highlight-row">
         <div class="stat-highlight">
           <span class="stat-big">5.95</span>
@@ -80,12 +90,14 @@
       </div>
       <div class="chart-card chart-full">
         <h3>How Long Claims Really Take</h3>
-        <p class="chart-subtitle">Processing days distribution - 20.8% are same-day, but 14.8% take more than 11 days</p>
+        <p class="chart-subtitle">Processing days distribution - 20.8% are same-day, but 14.8% take more than 11 days
+        </p>
         <div class="chart-wrap chart-wrap-tall"><canvas id="chart-tat-dist"></canvas></div>
       </div>
       <div class="insight-callout insight-warning">
         <div class="insight-icon">⚠</div>
-        <div><strong>The gap between mean (5.95) and median (3) signals skew.</strong> A small proportion of claims are dragging the average up dramatically. Where are they coming from?</div>
+        <div><strong>The gap between mean (5.95) and median (3) signals skew.</strong> A small proportion of claims are
+          dragging the average up dramatically. Where are they coming from?</div>
       </div>
     </div>
   </section>
@@ -109,7 +121,8 @@
       </div>
       <div class="insight-callout insight-danger">
         <div class="insight-icon">🔴</div>
-        <div><strong>Scanning: 16.1-day mean TAT.</strong> It handles 17.6% of volume but consumes 47.6% of all processing days. Claims Portal processes similar volumes in 0.7 days on average.</div>
+        <div><strong>Scanning: 16.1-day mean TAT.</strong> It handles 17.6% of volume but consumes 47.6% of all
+          processing days. Claims Portal processes similar volumes in 0.7 days on average.</div>
       </div>
     </div>
   </section>
@@ -119,7 +132,8 @@
     <div class="section-container">
       <div class="chapter-label">Chapter 4</div>
       <h2 class="section-title">Where Capacity Is Consumed</h2>
-      <p class="section-lead">Cross-referencing channels with claim types reveals exactly which combinations are eating the most time.</p>
+      <p class="section-lead">Cross-referencing channels with claim types reveals exactly which combinations are eating
+        the most time.</p>
       <div class="chart-card chart-full">
         <h3>Channel × Claim Type - % of Total Processing Time</h3>
         <p class="chart-subtitle">Colour intensity = share of 687,634 total processing days consumed</p>
@@ -127,7 +141,8 @@
       </div>
       <div class="insight-callout insight-danger">
         <div class="insight-icon">🎯</div>
-        <div><strong>Two cells tell the whole story.</strong> Medical × Scanning (30.3%) and Hospital × ECLIPSE (24.8%) together consume 55.1% of all processing time - despite representing just 15.5% of claim volume.</div>
+        <div><strong>Two cells tell the whole story.</strong> Medical × Scanning (30.3%) and Hospital × ECLIPSE (24.8%)
+          together consume 55.1% of all processing time - despite representing just 15.5% of claim volume.</div>
       </div>
     </div>
   </section>
@@ -158,7 +173,8 @@
     <div class="section-container">
       <div class="chapter-label">Chapter 6</div>
       <h2 class="section-title">The People Behind the Numbers</h2>
-      <p class="section-lead">242 agents process claims - but performance varies dramatically, partly due to the type of work they handle.</p>
+      <p class="section-lead">242 agents process claims - but performance varies dramatically, partly due to the type of
+        work they handle.</p>
       <div class="chart-pair">
         <div class="chart-card">
           <h3>Agent Volume vs. Speed</h3>
@@ -189,9 +205,11 @@
 
   <!-- Footer -->
   <footer>
-    <p>Claims Operations Analysis · Rakshit Puniani · Data period: Jan-Nov 2021 · 115,529 claims</p>
+    <p>Powered by Claude code, Antigravity, React js, Python · Claims Operations Analysis · Rakshit Puniani · Data
+      period: Jan-Nov 2021 · 115,529 claims</p>
   </footer>
 
   <script type="module" src="/main.js"></script>
 </body>
+
 </html>
